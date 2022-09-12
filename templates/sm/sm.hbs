@@ -664,11 +664,10 @@
     </table>
 {{/if}}
 
-<!-- TODO: this shows when sykmelding.utdypendeOpplysninger returns a empty map it should not -->
 {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
 
 {{else}}
-{{#if sykmelding.utdypendeOpplysninger}}
+{{#not_eq sykmelding.utdypendeOpplysninger "{}"}}
     <table>
         <thead>
         <tr>
@@ -703,7 +702,7 @@
             {{/each}}
         {{/each}}
     </table>
-{{/if}}
+{{/not_eq}}
 {{/eq}}
 {{#eq rulesetVersion "3"}}
 {{else}}
