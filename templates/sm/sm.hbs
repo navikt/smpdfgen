@@ -659,7 +659,7 @@
                 {{/if}}
             {{/if}}
         {{/eq}}
-        
+
         </tbody>
     </table>
 {{/if}}
@@ -667,6 +667,7 @@
 {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
 
 {{else}}
+{{#if sykmelding.utdypendeOpplysninger }}
 {{#not_eq sykmelding.utdypendeOpplysninger "{}"}}
     <table>
         <thead>
@@ -703,6 +704,7 @@
         {{/each}}
     </table>
 {{/not_eq}}
+{{/if}}
 {{/eq}}
 {{#eq rulesetVersion "3"}}
 {{else}}
