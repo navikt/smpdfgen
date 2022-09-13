@@ -9,7 +9,7 @@ spec:
   image: {{ image }}
   port: 8080
   replicas:
-    min: 2
+    min: 3
     max: 5
     cpuThresholdPercentage: 70
   liveness:
