@@ -917,6 +917,13 @@
             <li> Versjon: {{ sykmelding.avsenderSystem.versjon }} </li>
         </td>
     </tr>
+    {{#if behandlderHprNr }}
+        <tr>
+            <td><h4></h4></td>
+            <td><h4>Behandler HPR-nummer</h4></td>
+            <td>{{ behandlderHprNr }}</td>
+        </tr>
+    {{/if}}
     </tbody>
 </table>
 
