@@ -7,7 +7,10 @@ Repository for team sykmelding sykmelding pdfgen templates.
 * [pdfgen](https://github.com/navikt/pdfgen)
 
 #### Creating a docker image
-Creating a docker image should be as simple as `docker build -t smpdfgen .`
+Creating a docker image should be as simple as 
+```bash
+docker build -t smpdfgen .
+```
 
 ## Getting started
 ### Run in development mode
