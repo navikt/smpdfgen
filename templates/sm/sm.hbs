@@ -12,7 +12,9 @@
         * {
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
         }
-
+        td span {
+            float:right; width:100%; min-width:100%;
+        }
         td {
             font-size: 0.9em;
         }
@@ -94,6 +96,11 @@
 
         .infoblock {
         }
+        .header-ikon {
+                    width: 20%;
+                    position: relative;
+                    left: 560px;
+        }
     </style>
     <title>
         {{#each merknader}}
@@ -106,17 +113,19 @@
         {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Sykmelding for {{ pasient.fornavn }} {{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}}</title>
 </head>
 <body>
+<img class="header-ikon" alt="NAV logo"
+     src="{{ image "NAVLogoRed.png" }}" />
 <table class="header">
     <thead>
     <tr>
-        <td class="tr75">
+        <td class="tr65">
             {{#each merknader}}
                 {{#eq type "UGYLDIG_TILBAKEDATERING" }}
                     AVSLÅTT
                 {{/eq}}
              {{/each}}
-             {{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}} {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}EGENMELDING FOR SELVSTENDIG NÆRINGSDRIVENDE ELLER FRILANSER {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}SYKMELDING</td>
-        <td>NAVs eksemplar</td>
+             {{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}} {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}EGENMELDING FOR SELVSTENDIG NÆRINGSDRIVENDE ELLER FRILANSER {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Papirsykmelding</td>
+    <td align="left">Genereringsdato: {{ iso_to_nor_date sykmelding.signaturDato }} </td>
     </tr>
     <tr>
         <td>Mottatt dato NAV: {{ iso_to_nor_date mottattDato }}</td>
