@@ -9,8 +9,8 @@ spec:
   image: {{ image }}
   port: 8080
   replicas:
-    min: 1
-    max: 3
+    min: 2
+    max: 4
     cpuThresholdPercentage: 80
   liveness:
     path: /internal/is_alive
@@ -32,9 +32,9 @@ spec:
     enabled: false
   resources:
     limits:
-      memory: 500Mi
+      memory: 2048Mi
     requests:
-      cpu: 200m
+      cpu: 300m
       memory: 400Mi
   accessPolicy:
     inbound:
