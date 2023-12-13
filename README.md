@@ -1,10 +1,13 @@
 [![Build status](https://github.com/navikt/smpdfgen/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)](https://github.com/navikt/smpdfgen/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)
-# PdfGen
+# smpdfgen
 Repository for team sykmelding sykmelding pdfgen templates.
 
 ## Technologies & Tools
 
 * [pdfgen](https://github.com/navikt/pdfgen)
+* Docker
+* [Handlebars js](https://handlebarsjs.com/)
+* Json
 
 #### Creating a docker image
 Creating a docker image should be as simple as 
@@ -14,22 +17,7 @@ docker build -t smpdfgen .
 
 ## Getting started
 ### Run in development mode
-To run the application with templates, data and fonts locally mounted you can use
-```bash
-docker run \
-        -v /full/path/to/templates:/app/templates \
-        -v /full/path/to/fonts:/app/fonts \
-        -v /full/path/to/data:/app/data \
-        -v /full/path/to/resources:/app/resources \
-        -p 8080:8080 \
-        -e DISABLE_PDF_GET=false \
-        -e JDK_JAVA_OPTIONS \
-        -it \
-        --rm \
-        ghcr.io/navikt/pdfgen:2.0.19
-```
-
-Or you can use the convenience script
+To run the application with templates, data and fonts locally mounted you can use the convenience script
 ```bash
 ./run_development.sh
 ```
