@@ -107,6 +107,9 @@
             {{#eq type "UGYLDIG_TILBAKEDATERING" }}
                 AVSLÅTT
             {{/eq}}
+            {{#eq type "DELVIS_GODKJENT" }}
+                DELVIS GODKJENT
+            {{/eq}}
         {{/each}}
         {{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}}
         {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}Egenmeldt {{/eq}}
@@ -122,6 +125,9 @@
             {{#each merknader}}
                 {{#eq type "UGYLDIG_TILBAKEDATERING" }}
                     AVSLÅTT
+                {{/eq}}
+                {{#eq type "DELVIS_GODKJENT" }}
+                    DELVIS GODKJENT
                 {{/eq}}
              {{/each}}
              {{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}} {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}EGENMELDING FOR SELVSTENDIG NÆRINGSDRIVENDE ELLER FRILANSER {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Papirsykmelding</td>
@@ -995,6 +1001,13 @@
                         <td></td>
                         <td><h4>Krever flere opplysninger</h4></td>
                         <td>NAV trenger flere opplysninger for å vurdere om sykmeldingen gir rett på sykepenger for den tilbakedaterte perioden.</td>
+                    </tr>
+                {{/eq}}
+                {{#eq type "DELVIS_GODKJENT" }}
+                    <tr>
+                        <td></td>
+                        <td><h4>Delvis godkjent</h4></td>
+                        <td>Sykmeldingen er delvis godkjent på grunn av tilbakedatering uten gyldig grunn til dette. Sykmeldingen er godkjent fra tidspunktet pasienten oppsøkte lege.</td>
                     </tr>
                 {{/eq}}
             {{/each}}
