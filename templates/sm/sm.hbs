@@ -134,7 +134,7 @@
     <td align="left">Genereringsdato: {{ iso_to_nor_date sykmelding.signaturDato }} </td>
     </tr>
     <tr>
-        <td>Mottatt dato NAV: {{ iso_to_nor_date mottattDato }}</td>
+        <td>Mottatt dato NAV: {{ iso_to_nor_datetime_seconds mottattDato }}</td>
         <td>Behandlet dato: {{ iso_to_nor_date sykmelding.behandletTidspunkt }}</td>
     </tr>
     </thead>
