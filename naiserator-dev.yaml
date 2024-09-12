@@ -42,8 +42,8 @@ spec:
     limits:
       memory: 2048Mi
     requests:
-      cpu: 50m
-      memory: 756Mi
+      cpu: 30m
+      memory: 400Mi
   accessPolicy:
     inbound:
       rules:
