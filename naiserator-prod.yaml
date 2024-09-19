@@ -9,7 +9,7 @@ spec:
   image: {{ image }}
   port: 8080
   replicas:
-    min: 2
+    min: 3
     max: 8
     scalingStrategy:
       cpu:
@@ -43,7 +43,7 @@ spec:
       memory: 2560Mi
     requests:
       cpu: 90m
-      memory: 1100Mi
+      memory: 756Mi
   accessPolicy:
     inbound:
       rules:
