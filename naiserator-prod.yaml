@@ -50,3 +50,6 @@ spec:
         - application: syfosmsak
           namespace: teamsykmelding
           cluster: prod-gcp
+        - application: syk-inn-api
+          namespace: tsm
+          cluster: prod-gcp
