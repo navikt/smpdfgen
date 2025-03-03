@@ -13,7 +13,7 @@ spec:
     max: 12
     scalingStrategy:
       cpu:
-        thresholdPercentage: 80
+        thresholdPercentage: 85
   liveness:
     path: /internal/is_alive
     timeout: 1
@@ -42,8 +42,8 @@ spec:
     limits:
       memory: 2560Mi
     requests:
-      cpu: 70m
-      memory: 1000Mi
+      cpu: 100m
+      memory: 512Mi
   accessPolicy:
     inbound:
       rules:
